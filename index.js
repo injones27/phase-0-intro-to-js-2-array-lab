@@ -18,21 +18,34 @@ function destructivelyRemoveFirstCat() {
 }
 
 
-let addCat = cats.slice();
 function appendCat(name) {
-    return addCat.push(name);
+    let addCat = cats.slice();
+    addCat.push(name);
+    return addCat
 };
 
-const catRemoval = cats.slice();
-function removeLastCat() {  
+function prependCat(name) {  
+    let catRemoval = cats.slice();
     catRemoval.slice(0, cats.length - 1);
+    catRemoval.unshift(name)
+    return catRemoval
 };
 
-const firstCatRemoval = cats.slice;
-function removeFirstCat() {
-    firstCatRemoval.slice(0,1);
+function removeLastCat() {
+    let lastCatRemoved = cats.slice();
+    lastCatRemoved.pop()
+    return lastCatRemoved
 };
-console.log(appendCat("Broom"));
+
+
+function removeFirstCat() {
+    let firstCatRemoved = cats.slice();
+    firstCatRemoved.shift()
+    return firstCatRemoved
+};
+
+
+// console.log(appendCat("Broom"));
 // console.log(cats);
 // console.log(firstCatRemoval);
 // console.log( );
